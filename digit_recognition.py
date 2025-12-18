@@ -7,7 +7,7 @@ from tensorflow.keras.losses import SparseCategoricalCrossentropy
 import matplotlib.pyplot as plt
 
 # 1. Load Data (The famous MNIST dataset)
-# Andrew Ng's course uses a subset, but we will use the full 60,000 images!
+
 print("Loading data...")
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -26,7 +26,7 @@ model = Sequential([
 ])
 
 # 4. Compile the Model
-# We use 'from_logits=True' because it's more numerically stable (as taught in the course)
+# We use 'from_logits=True' because it's more numerically stable 
 model.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
     loss=SparseCategoricalCrossentropy(from_logits=True),
@@ -41,6 +41,7 @@ history = model.fit(X_train, y_train, epochs=10, validation_data=(X_test, y_test
 test_loss, test_acc = model.evaluate(X_test, y_test, verbose=2)
 print(f'\nTest accuracy: {test_acc*100:.2f}%')
 
-# 7. Save the model (optional, makes it a "real" project)
+# 7
 model.save('handwritten_digit_model.h5')
+
 print("Model saved as 'handwritten_digit_model.h5'")
