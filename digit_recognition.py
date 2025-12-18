@@ -17,7 +17,7 @@ X_train = X_train / 255.0
 X_test = X_test / 255.0
 
 # 3. Build the Model (Neural Network)
-# This matches the architecture from Course 2: Input -> Hidden (ReLU) -> Output (Softmax/Linear)
+# Input -> Hidden (ReLU) -> Output (Softmax/Linear)
 model = Sequential([
     Flatten(input_shape=(28, 28)),      # Input Layer: Flattens 28x28 image to 784 pixels
     Dense(128, activation='relu'),      # Hidden Layer 1: 128 neurons, ReLU activation
@@ -45,3 +45,4 @@ print(f'\nTest accuracy: {test_acc*100:.2f}%')
 model.save('handwritten_digit_model.h5')
 
 print("Model saved as 'handwritten_digit_model.h5'")
+
